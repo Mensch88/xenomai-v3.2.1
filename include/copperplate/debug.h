@@ -35,7 +35,7 @@ struct threadobj;
 
 #else /* !CONFIG_XENO_DEBUG */
 
-#define debug(fmt, args...)  do { } while (0)
+//#define debug(fmt, args...)  do { } while (0)
 
 #endif /* !CONFIG_XENO_DEBUG */
 
