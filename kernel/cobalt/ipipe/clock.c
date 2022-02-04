@@ -154,5 +154,6 @@ void pipeline_update_clock_freq(unsigned long long freq)
 
 void pipeline_init_clock(void)
 {
+	pr_info("pipeline_init_clock %lu\n", cobalt_pipeline.clock_freq);
 	pipeline_update_clock_freq(cobalt_pipeline.clock_freq);
 }

@@ -4706,6 +4706,14 @@ index 7e322e2daaf5..835856efd71f 100644
  	.name                   = "tsc",
  	.rating                 = 300,
  	.read                   = read_tsc,
+@@ -1341,7 +1341,7 @@
+ 	pr_info("Refined TSC clocksource calibration: %lu.%03lu MHz\n",
+ 		(unsigned long)tsc_khz / 1000,
+ 		(unsigned long)tsc_khz % 1000);
+-
++	__ipipe_report_clockfreq_update(tsc_khz);
+ 	/* Inform the TSC deadline clockevent devices about the recalibration */
+ 	lapic_update_tsc_freq();
 diff --git a/arch/x86/kernel/vm86_32.c b/arch/x86/kernel/vm86_32.c
 index a76c12b38e92..d28e32e79092 100644
 --- a/arch/x86/kernel/vm86_32.c

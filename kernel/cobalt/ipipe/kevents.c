@@ -397,8 +397,8 @@ void pipeline_cleanup_process(void)
 static inline int handle_clockfreq_event(unsigned int *p)
 {
 	unsigned int newfreq = *p;
-
-	pipeline_update_clock_freq(newfreq);
+	pr_info("handle_clockfreq_event %lu\n", newfreq);
+	pipeline_update_clock_freq(newfreq * 1000ULL));
 
 	return KEVENT_PROPAGATE;
 }
